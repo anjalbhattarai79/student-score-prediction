@@ -22,7 +22,7 @@ app.add_middleware(
 class Hours(BaseModel):
     hrs: Annotated[float, Field(..., gt=0, lt=12, description="Number of hours studied", example=5.0)]
 
-with open('model.pkl', 'rb') as f:
+with open('app/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 @app.get("/")
